@@ -1,0 +1,89 @@
+'Single line comment 
+/' Multi
+ line
+  comment'/
+
+' Basic class diagram 
+@startuml Basic Class 
+title Basic class diagram 
+class Dog {
+    ' + for public, # for protected, - for private, () to indicate method, : after mrthod - return type
+    ' class has attributes and methods
+    + Id 
+    # parent 
+    - name 
+    + getName() : string
+}
+
+class Owner 
+
+' Show some relation  --, .. for line <> or <|> for arrows
+Owner --> Dog
+@enduml
+
+'########################
+
+' Basic elements of a class diagram 
+' Bird class extends Animal class and implements flying interface
+@startuml Class1
+interface Flying{
+    {abstract}flying():void
+}
+
+abstract class Animal {
+    - name : string
+    + getname() : string
+    ' abstract function
+    + getAnimalType() : string 
+}
+
+Class Bird{
+    +flying(): void 
+    + getAnimalType():string
+}
+
+class Dog
+class Vehicle 
+Class Driver 
+Class Engine 
+class Fuel 
+
+'Relationships 
+'Associations : One class knows other class, Here Bird knows Dog 
+Dog <-- Bird
+'Inheritence 
+Animal <|-- Bird
+'Realization/Implementation for Interfaces 
+Flying <|.. Bird 
+'Dependency 
+Vehicle <.. Fuel
+'Aggregation - Classes are dependent but not necessary that always together 
+Vehicle o- Driver 
+
+'Composition - classes completely dependent on each other 
+Vehicle *-- Engine 
+
+
+'Multiplicity
+class House 
+class Kitchen 
+class Bath 
+class Bedroom 
+class Room 
+class Mortgage 
+Class Mailbox 
+
+
+House *-- "1" Kitchen 
+House *-- "1" Bath 
+House *-- "1..*" Bedroom
+
+House -- "0..1" Mortgage
+House o-- Mailbox
+' Kitchen, bedroom, bath extend room class 
+Kitchen --|> Room 
+Bedroom --|> Room
+Bath --|> Room
+
+
+@enduml

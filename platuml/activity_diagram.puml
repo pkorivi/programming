@@ -1,0 +1,47 @@
+' These are like flow charts 
+@startuml Activity diagram 
+start 
+:Handlerequest();
+:new page;
+if(page.onsecuritycheck) then (true)
+    :Page.OnInit();
+    :Process Controls ;
+else (no)
+    :Page.Close();
+
+endif
+:WhatsNew();
+if(Something New) then (Handle)
+    :Handlerequest();
+else 
+    stop
+endif 
+stop
+@enduml
+
+@startuml something else on activity 
+start 
+repeat 
+    :Test SOmething;
+        if(Test OK?) then (Ok)
+            #palegreen:OK;
+            break
+        endif 
+        ->NOK;
+        #orange: Alert "Error with the test";
+repeat while (Something wrint with long test) is (Yes)
+->no; 
+#green::Alert "Success";
+stop
+@enduml
+
+@startuml Loop 
+start 
+repeat 
+    :read data;
+    :generate diagrams;
+repeat while (more data?) is (yes)
+->no;
+stop
+
+@enduml

@@ -1,0 +1,21 @@
+@startuml Object Diagram
+object London{
+    desc = "Beautiful city"
+}
+object Washington 
+object Berlin 
+object Delhi 
+object NewYork
+
+map CapitalCity{
+UK *-> London 
+USA *-> Washington
+Germany *-> Berlin 
+India *-> Delhi  
+}
+
+NewYork --> CapitalCity::USA
+
+London -- Delhi
+
+@enduml

@@ -1,0 +1,40 @@
+'Start of UML diagram
+' -> solid line, --> dashed line 
+@startuml Learning plant uml
+'number sequence
+autonumber 
+Alice -> Bob : Hello
+Alice -> Bob ++ : Hola
+return 
+Bob --> Alice : Hola Hola
+Bob -> Danny : Suppppp 
+
+@enduml
+' End of UML diagram
+
+@startuml Simple Sequence Diagram
+title Simple Sequence Diagram Example
+
+actor Chris
+boundary PlantUMLServer
+
+Chris->PlantUMLServer: Edit PlantUML Code
+PlantUMLServer->PlantUMLServer: Process Code
+alt Chris' PlantUML Code is wrong
+    PlantUMLServer -> Chris:  Syntax error, goofball!
+else Chris' PlantUML is good
+    PlantUMLServer -> Chris: Here's your pretty picture
+end
+@enduml
+
+@startuml Sequence 3
+
+actor User as U1 
+U1 -> LoginScreen : CLick login buttnn
+LoginScreen -> ValidateUser : Validate User 
+
+
+@enduml
+
+
+

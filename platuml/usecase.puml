@@ -1,0 +1,49 @@
+@startuml basic usecase 
+left to right direction 
+actor "Food Critic" as fc 
+rectangle Restaurant {
+    usecase "Eat Food " as UC1
+    usecase "Pay for food" as UC2 
+    usecase "Drink" as UC3 
+}
+fc --> UC1
+fc --> UC2
+fc -->  UC3
+@enduml
+
+@startuml Usecase2
+:Main Admin: as Admin 
+(Use the Application) as Use
+
+User -> (Start)
+User -> Use
+Admin --> Use
+
+note right of Admin : This is an example of an actor 
+note "This is connected \nto several objects. " as N2 
+
+(start) .. N2
+N2 .. Use
+
+note right of Use 
+A note can also be 
+on several lines 
+end note
+@enduml
+
+@startuml Netlibrary
+left to right direction
+:Borrower: as Borrower
+:EmailServer: as server 
+
+rectangle NetLibrary{
+    Borrower - (Find Books)
+    Borrower - (Reserve Books)
+    Borrower - (Borrow Books)
+    Borrower - (Renew Books)
+}
+
+server -up- (Reserve Books)
+
+@enduml
+
